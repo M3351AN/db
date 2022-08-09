@@ -1706,6 +1706,18 @@ rules:
   - DOMAIN-SUFFIX,googlevideo.com,🎬Youtube
   - DOMAIN-SUFFIX,youtube.com,🎬Youtube
   - DOMAIN,youtubei.googleapis.com,🎬Youtube
+   - DOMAIN-SUFFIX,biliapi.net ,🎬Youtube
+   - DOMAIN,api.bilibili.com ,🎬Youtube
+   - DOMAIN,api.bilibili.tv ,🎬Youtube
+   - DOMAIN,app.bilibili.com,🎬Youtube
+   - DOMAIN-SUFFIX,biliapi.com ,🎬Youtube
+   - DOMAIN,api.live.bilibili.com ,🎬Youtube
+   - DOMAIN,api.vc.bilibili.com ,🎬Youtube
+   - DOMAIN,passport.bilibili.com ,🎬Youtube
+   - DOMAIN,live-trace.bilibili.com ,🎬Youtube
+   - DOMAIN,message.bilibili.com,🎬Youtube
+   - DOMAIN,cm.bilibili.com ,🎬Youtube
+   # - DOMAIN-SUFFIX,bilibili.com ,🎬Youtube
 
   - DOMAIN-SUFFIX,netflix.com,🎬Netflix
   - DOMAIN-SUFFIX,netflix.net,🎬Netflix
@@ -2247,114 +2259,4 @@ rules:
   - MATCH,⚓️其他流量
 
 
-   # ======= 哔哩哔哩 ======= # 
-   # 哔哩哔哩 
-   - DOMAIN-SUFFIX,biliapi.net 
-   - DOMAIN,api.bilibili.com 
-   - DOMAIN,api.bilibili.tv 
-   - DOMAIN,app.bilibili.com 
-   - DOMAIN-SUFFIX,biliapi.com 
-   - DOMAIN,api.live.bilibili.com 
-   - DOMAIN,api.vc.bilibili.com 
-   - DOMAIN,passport.bilibili.com 
-   - DOMAIN,live-trace.bilibili.com 
-   - DOMAIN,message.bilibili.com 
-   - DOMAIN,cm.bilibili.com 
-   # - DOMAIN-SUFFIX,bilibili.com 
-   # ======= 微博 ======= # 
-   # 微博 
-   # issue#5 报告发表和评论操作会暴露IP，建议不要使用手机客户端，无法确定是否存在其他IP或域名，已扩充到DOMAIN-SUFFIX 
-   # - DOMAIN-SUFFIX,api.weibo.cn 
-   # - DOMAIN-SUFFIX,api.weibo.com 
-   - DOMAIN-SUFFIX,weibo.cn 
-   - DOMAIN-SUFFIX,weibo.com 
-   - DOMAIN-SUFFIX,weibocdn.com 
-   - DOMAIN-KEYWORD,weibo 
-   # ======= 百度贴吧 ======= # 
-   # 百度贴吧 
-   - DOMAIN,tieba.baidu.com 
-   - DOMAIN,tbmsg.baidu.com 
-   - DOMAIN,tb5.bdstatic.com 
-   - DOMAIN,fclog.baidu.com 
-   - DOMAIN,gsp0.baidu.com 
-   - DOMAIN,hm.baidu.com 
-   - DOMAIN,www.baidu.com 
-   # ======= 微信 ======= # 
-   # 微信通用 
-   - DOMAIN,szshort.weixin.qq.com 
-   - DOMAIN,szextshort.weixin.qq.com 
-   - DOMAIN,szminorshort.weixin.qq.com 
-   # 微信公众号评论 
-   - DOMAIN,mp.weixin.qq.com 
-   # 微信视频号评论 
-   # - DOMAIN,szshort.weixin.qq.com   # 疑似微信视频号，用途未知 
-   # 无法确定准确的请求方式，建议全局代理 
-   # ======= 知乎 ======= # 
-   # 知乎 
-   # - DOMAIN,zhihu-web-analytics.zhihu.com   # 知乎统计API域名 
-   # - DOMAIN,www.zhihu.com   # 知乎主站域名，不存在单独有效的API域名 
-   # - DOMAIN,api.zhihu.com   # 知乎API域名 
-   - DOMAIN-SUFFIX,zhihu.com 
-   - IP-CIDR,103.41.167.0/24 
-   # ======= 国家反诈中心 ======= # 
-   # 国家反诈中心App 
-   # - DOMAIN-SUFFIX,gjfzpt.cn,REJECT # 国家反诈中心域名，全部阻断 # Rule Provider中不可单独设置规则，需要自行阻断 
-   # - SRC-IP-CIDR,219.143.187.136/32,REJECT # 用途未知 
-   # ======= 抖音 ======= # 
-   # 抖音 
-   # 请求域名过多，建议全局代理 
-   # 网友提供抖音IP定位接口 
-   - DOMAIN-KEYWORD,core-c-lq 
-   - DOMAIN-KEYWORD,core-lq 
-   - DOMAIN-KEYWORD,normal-c-lq 
-   - DOMAIN-KEYWORD,normal-lq 
-   - DOMAIN-KEYWORD,search-quic-lq 
-   - DOMAIN-KEYWORD,search-lq 
-   # ======= 头条 ======= # 
-   # 网友提供头条IP定位接口 
-   - DOMAIN-SUFFIX,toutiaoapi.com 
-   # ======= 快手 ======= # 
-   # issue#3 提供 
-   # 个人主页似乎有延迟，未测试 
-   # 一个域名连不上会请求另一个，两个同时使用就会生效了 
-   - DOMAIN-SUFFIX,gifshow.com 
-   - DOMAIN-SUFFIX,ksapisrv.com 
-   # ======= 小红书 ======= # 
-   # issue#4 提供 
-   - DOMAIN-SUFFIX,xiaohongshu.com 
-   # ======= 其乐论坛 ======= # 
-   # issue#11 提供 
-   - DOMAIN,keylol.com 
-   # ======= 西瓜视频 ======= # 
-   # issue#10 提供 
-   - DOMAIN-SUFFIX,ixigua.com 
-   # ======= 文叔叔 ======= # 
-   # DoingDog/anti-ip-attribution 
-   - DOMAIN,www.wenshushu.cn 
-   # ======= 豆瓣 ======= # 
-   # issue#14提供 
-   # iOS客户端 
-   # 目前无法可靠地处理iOS端的请求，建议全局代理 
-   - IP-CIDR,119.29.29.98/32,REJECT 
-   - DOMAIN,frodo.douban.com 
-   # 网页端 
-   - DOMAIN,www.douban.com 
-   # ======= 酷安 ======= # 
-   # issue#15提供 
-   - DOMAIN,api.coolapk.com 
-   # ======= TapTap ======= # 
-   # issue#16提供 
-   - DOMAIN,api.taptapdada.com 
-   # ======= 网易大神 ======= # 
-   # issue#17提供 
-   - DOMAIN,god.gameyw.netease.com 
-   # ======= 虎牙 ======= # 
-   # issue#17提供 
-   - DOMAIN-SUFFIX,huya.com 
-   # ======= 懂球帝 ======= # 
-   # issue#18提供 
-   - DOMAIN-SUFFIX,dongqiudi.com,IP归属地 
-   # ======= NGA ======= # 
-   # issue#19提供 
-   # 个人主页ip。开代理以后发一个评论就会变代理ip 
-   - DOMAIN,ngabbs.com
+ 
