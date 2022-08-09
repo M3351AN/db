@@ -2246,14 +2246,7 @@ rules:
 
   - MATCH,⚓️其他流量
 
-# 针对部分网站显示IP归属地的Clash分流规则 
- # anti-ip-attribution clash_rule_set.yaml 对应cfw.yaml v0.2.2 
- # https://github.com/lwd-temp/anti-ip-attribution 
- # 适用于Clash的Rule Provider功能，详见https://lancellc.gitbook.io/clash/clash-config-file/rule-provider 
- # 由于技术限制，只能实现精确到域名的分流规则，无法精确到路径。 
- # 
- # 维护者注意：根据issue#13，域名后不要添加注释 
- payload: # array 
+
    # ======= 哔哩哔哩 ======= # 
    # 哔哩哔哩 
    - DOMAIN-SUFFIX,biliapi.net 
