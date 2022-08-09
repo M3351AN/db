@@ -1706,18 +1706,18 @@ rules:
   - DOMAIN-SUFFIX,googlevideo.com,🎬Youtube
   - DOMAIN-SUFFIX,youtube.com,🎬Youtube
   - DOMAIN,youtubei.googleapis.com,🎬Youtube
-   - DOMAIN-SUFFIX,biliapi.net ,🎬Youtube
-   - DOMAIN,api.bilibili.com ,🎬Youtube
-   - DOMAIN,api.bilibili.tv ,🎬Youtube
-   - DOMAIN,app.bilibili.com,🎬Youtube
-   - DOMAIN-SUFFIX,biliapi.com ,🎬Youtube
-   - DOMAIN,api.live.bilibili.com ,🎬Youtube
-   - DOMAIN,api.vc.bilibili.com ,🎬Youtube
-   - DOMAIN,passport.bilibili.com ,🎬Youtube
-   - DOMAIN,live-trace.bilibili.com ,🎬Youtube
-   - DOMAIN,message.bilibili.com,🎬Youtube
-   - DOMAIN,cm.bilibili.com ,🎬Youtube
-   # - DOMAIN-SUFFIX,bilibili.com ,🎬Youtube
+  - DOMAIN-SUFFIX,biliapi.net,🎬Youtube
+  - DOMAIN,api.bilibili.com,🎬Youtube
+  - DOMAIN,api.bilibili.tv,🎬Youtube
+  - DOMAIN,app.bilibili.com,🎬Youtube
+  - DOMAIN-SUFFIX,biliapi.com,🎬Youtube
+  - DOMAIN,api.live.bilibili.com,🎬Youtube
+  - DOMAIN,api.vc.bilibili.com,🎬Youtube
+  - DOMAIN,passport.bilibili.com,🎬Youtube
+  - DOMAIN,live-trace.bilibili.com,🎬Youtube
+  - DOMAIN,message.bilibili.com,🎬Youtube
+  - DOMAIN,cm.bilibili.com,🎬Youtube
+   # - DOMAIN-SUFFIX,bilibili.com,🎬Youtube
 
   - DOMAIN-SUFFIX,netflix.com,🎬Netflix
   - DOMAIN-SUFFIX,netflix.net,🎬Netflix
