@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a2x2txt</title>
+</head>
+<body>
+    <textarea id="jsonInput" rows="10" cols="50" placeholder="a2xJSON"></textarea>
+    <button onclick="processJson()">DASH</button>
+    <br>
+    <textarea id="output" rows="10" cols="50" readonly></textarea>
+
+    <script>
+        function processJson() {
+            const jsonInput = document.getElementById('jsonInput').value;
+            try {
+                const jsonData = JSON.parse(jsonInput);
+                let outputText = '';
+                for (const className in jsonData['client.dll']['classes']) {
+                    const classData = jsonData['client.dll']['classes'][className];
+                    for (const fieldName in classData['fields']) {
+                        const fieldValue = classData['fields'][fieldName];
+                        outputText += `${className}->${fieldName}: ${fieldValue}\n`;
+                    }
+                }
+
+                document.getElementById('output').value = outputText;
+            } catch (error) {
+                alert('invaild JSON');
+            }
+        }
+    </script>
+</body>
+</html>
