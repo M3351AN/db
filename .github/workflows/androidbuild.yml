@@ -1,0 +1,38 @@
+name: Build Android Binary
+
+on:
+  push:
+    paths:
+      - zuto.cc
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Android NDK
+      uses: android-actions/setup-ndk@v2
+      with:
+        ndk-version: 'r21e'
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ninja-build
+
+    - name: Build the project
+      run: |
+        export NDK_HOME=$ANDROID_NDK_HOME
+        export PATH=$NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
+        mkdir -p build
+        cd build
+        clang++ --target=aarch64-linux-android29 -gcc-toolchain $NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64 -o my_program ../zuto.cc
+
+    - name: Archive build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: my_program
+        path: build/my_program
