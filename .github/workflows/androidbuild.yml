@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - zuto.cc
+  workflow_dispatch:
 
 jobs:
   build:
