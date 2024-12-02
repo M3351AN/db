@@ -20,10 +20,10 @@ jobs:
           config: tegra11_pisces_user_defconfig
           arch: arm
           aosp-gcc: true
-          aosp-clang: false
+          aosp-clang: true
           ksu: false
           ksu-version: main
           android-version: 4.4.4
-          aosp-clang-version: r383902
+          aosp-clang-version: 3289846
           disable-lto: true
           anykernel3: true
