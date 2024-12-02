@@ -1,0 +1,29 @@
+# A simple action usage
+name: Build Kernel
+on:
+  workflow_dispatch:
+
+jobs:
+  Build-Kernel:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - name: Build Kernel
+      uses: dabao1955/kernel_build_action@main
+      with:
+          kernel-url: https://github.com/MiCode/Xiaomi_Kernel_OpenSource
+          kernel-branch: pisces-kk-oss
+          config: tegra11_pisces_user_defconfig
+          arch: arm
+          aosp-gcc: true
+          aosp-clang: false
+          ksu: false
+          ksu-version: main
+          android-version: 4.4.4
+          aosp-clang-version: r383902
+          disable-lto: true
+          anykernel3: true
